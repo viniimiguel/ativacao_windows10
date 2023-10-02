@@ -5,6 +5,7 @@ from time import sleep
 import subprocess
 import sys
 
+
 print("""VERIFIQUE A SUA VERSÃO DO WINDOWS:
       [1]PARA : Windows 10 Home
       [2]PARA : Windows 10 Home N
@@ -46,7 +47,7 @@ class auto():
             return False
 
     def comando(self):
-        comando = 'ipconfig'
+        comando = f'slmgr /ipk {inpt}'
         
         if self.is_admin():
             resultado = subprocess.run(comando, shell=True, capture_output=True, text=True)
